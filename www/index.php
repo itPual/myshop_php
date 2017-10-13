@@ -1,4 +1,9 @@
 <?php
+session_start();//start session
+if (!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array();
+}
+
 include_once "../config/config.php";//Initializing settings
 include_once "../config/db.php";//Initializing database
 include_once "../library/mainFunctions.php";//Main functions
@@ -13,5 +18,6 @@ $actionName = isset($_GET['action']) ? $_GET['action'] : "index";
 //echo "Function formative page (Action) = " . $actionName. "<br/>";
 
 //d($smarty);
+$smarty->assign('cartCntItems', count($_SESSION['cart']));
 
 loadPage($smarty, $controllerName, $actionName);

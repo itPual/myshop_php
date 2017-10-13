@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-12 14:40:55
+/* Smarty version 3.1.30, created on 2017-10-13 10:05:16
   from "C:\xampp\htdocs\myshop.local\views\default\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59df62d7a1a989_70782629',
+  'unifunc' => 'content_59e073bca76173_67460177',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64fd9744fe49e3c6fb3b087b716fbf25da56817b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\myshop.local\\views\\default\\index.tpl',
-      1 => 1507809728,
+      1 => 1507881854,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59df62d7a1a989_70782629 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e073bca76173_67460177 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <?php
@@ -31,10 +31,10 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration']++;
 ?>
-    <div style="float: left; padding: 0px 30px 40px 0px;">
+    <div style="float: left; padding: 0px 30px 40px 0px">
         <a href="/product/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 /">
-            <img src="./images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
+            <img src="/images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
 " width="100" />
         </a><br/>
         <a href="/product/<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>

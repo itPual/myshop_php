@@ -13,4 +13,13 @@
         {/foreach}
     </div>
 
+    <div class="menuCaption">Basket</div>
+    <a href="/cart/" title="Go shopping cart">In basket</a>
+    <span id="cartCntItems">
+    {if $cartCntItems > 0}
+        {$cartCntItems}
+    {else}empty
+    {/if}
+</span>
+
 </div>

@@ -21,7 +21,7 @@ define('TemplatePrefix', "../views/{$template}/");
 define('TemplatePostfix', '.tpl');
 
 //path to template files in web space
-define('TemplateWebPath', "./templates/{$template}/");
+define('TemplateWebPath', "/templates/{$template}/");
 //>
 
 //>Template Engine Smarty initialization

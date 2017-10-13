@@ -32,3 +32,28 @@ function getProductsByCat($itemId){
     $rs = mysqli_query($GLOBALS["db"], $sql);
     return createSmartyRsArray($rs);
 }
+
+/**
+ * get product by id
+ * @param $itemId
+ * @return array|null
+ */
+function getProductById($itemId){
+    $itemId = intval($itemId);
+    $sql = "SELECT *
+            FROM `products`
+            WHERE `id` = '{$itemId}'";
+
+    $rs = mysqli_query($GLOBALS["db"], $sql);
+    return mysqli_fetch_assoc($rs);
+}
+
+function getProductsFromArray($itemsId){
+    $strIds = implode($itemsId, ', ');
+    $sql = "SELECT *
+            FROM `products`
+            WHERE `id` in ({$strIds})";
+    $rs = mysqli_query($GLOBALS["db"], $sql);
+
+    return createSmartyRsArray($rs);
+}
