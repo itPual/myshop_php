@@ -17,3 +17,18 @@ function getLastProducts($limit = null){
     $rs = mysqli_query($GLOBALS["db"], $sql);
     return createSmartyRsArray($rs);
 }
+
+/**
+ * Get products for category $itemId
+ * @param $itemId
+ * @return array|bool
+ */
+function getProductsByCat($itemId){
+    $itemId = intval($itemId);
+    $sql = "SELECT *
+            FROM `products`
+            WHERE `category_id` = '{$itemId}'";
+
+    $rs = mysqli_query($GLOBALS["db"], $sql);
+    return createSmartyRsArray($rs);
+}
