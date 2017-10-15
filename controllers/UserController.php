@@ -52,3 +52,36 @@ function registerAction(){
     }
     echo json_encode($resData);
 }
+
+function logoutAction(){
+    if($_SESSION['user']){
+        unset($_SESSION['user']);
+        unset($_SESSION['cart']);
+    }
+    redirect('/');
+}
+
+function loginAction(){
+    $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : null;
+    $email = trim($email);
+
+    $pwd = isset($_REQUEST['pwd']) ? $_REQUEST['pwd'] : null;
+    $pwd = trim($pwd);
+
+    $userData = loginUser($email, $pwd);
+
+    if($userData['success']){
+        $userData = $userData[0];
+
+        $_SESSION['user'] = $userData;
+        $_SESSION['user']['displayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
+
+        $rsData = $_SESSION['user'];
+        $rsData['success'] = 1;
+    }
+    else{
+        $rsData['success'] = 0;
+        $rsData['message'] = "Invalid login or password";
+    }
+    echo json_encode($rsData);
+}

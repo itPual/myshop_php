@@ -13,6 +13,18 @@
         {/foreach}
     </div>
 
+    <div id="userBox" class="hideme">
+        <a href="#" id="userLink"></a><br/>
+        <a href="/user/logout/" onclick="logout();">Exit</a>
+    </div>
+
+    <div id="loginBox">
+        <div class="menuCaption">Login</div>
+        <input type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email">
+        <input type="password" id="loginPwd" name="loginPwd" value="" placeholder="Entre password">
+        <input type="button" onclick="login();" value="Login">
+    </div>
+
     <div id="registerBox">
         <div class="menuCaption showHiden" onclick="showRegisterBox()">Sin up</div>
         <div id="registerBoxHiden">
