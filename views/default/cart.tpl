@@ -5,6 +5,7 @@
     Basket empty.
 
     {else}
+    <form action="/cart/order/" method="POST">
     <h2>Order data</h2>
     <table>
         <tr>
@@ -55,4 +56,6 @@
             </tr>
         {/foreach}
     </table>
+        <input type="submit" value="Checkout">
+    </form>
 {/if}

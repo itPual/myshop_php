@@ -76,10 +76,14 @@ function registerNewUser() {
 
                 //>Block in left column
                 $("#registerBox").hide();
-
+                //<
+                //>order page
                 $('#userLink').attr('href', '/user/');
                 $('#userLink').html(data['userName']);
                 $('#userBox').show();
+
+                $('#loginBox').hide();
+                $('#btnSaveOrder').show();
                 //<
             }
             else {
@@ -110,6 +114,14 @@ function login() {
                 $('#userLink').attr('href', '/user/');
                 $('#userLink').html(data['displayName']);
                 $('#userBox').show();
+
+
+                $('#name').val(data['name']);
+                $('#phone').val(data['phone']);
+                $('#adress').val(data['adress']);
+
+
+                $('#btnSaveOrder').show();
             }
             else {
                 alert(data['message']);
@@ -161,4 +173,34 @@ function updateUserData() {
         }
     });
 
+}
+
+function saveOrder() {
+    var postData = getData('form');
+    $.ajax({
+        type: 'POST',
+        async: false,
+        url: "/cart/saveorder/",
+        data: postData,
+        dataType: 'json',
+        success: function (data){
+            if(data['success']){
+                alert(data['message']);
+                document.location = '/';
+            }
+            else {
+                alert(data['message']);
+            }
+        }
+    });
+}
+
+function showProducts(id) {
+    var objName = "#purchasesForOrderId_" + id;
+    if($(objName).css('display') != 'table-row'){
+        $(objName).show();
+    }
+    else {
+        $(objName).hide();
+    }
 }

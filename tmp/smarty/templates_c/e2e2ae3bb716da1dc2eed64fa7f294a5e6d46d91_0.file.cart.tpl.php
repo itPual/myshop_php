@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-13 16:12:01
+/* Smarty version 3.1.30, created on 2017-10-15 12:23:18
   from "C:\xampp\htdocs\myshop.local\views\default\cart.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59e0c9b1c713e0_55319634',
+  'unifunc' => 'content_59e3371646ad31_09636961',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e2e2ae3bb716da1dc2eed64fa7f294a5e6d46d91' => 
     array (
       0 => 'C:\\xampp\\htdocs\\myshop.local\\views\\default\\cart.tpl',
-      1 => 1507903913,
+      1 => 1508062865,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59e0c9b1c713e0_55319634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e3371646ad31_09636961 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <h1>Basket</h1>
@@ -29,6 +29,7 @@ function content_59e0c9b1c713e0_55319634 (Smarty_Internal_Template $_smarty_tpl)
     Basket empty.
 
     <?php } else { ?>
+    <form action="/cart/order/" method="POST">
     <h2>Order data</h2>
     <table>
         <tr>
@@ -106,6 +107,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
     </table>
+        <input type="submit" value="Checkout">
+    </form>
 <?php }
 }
 }

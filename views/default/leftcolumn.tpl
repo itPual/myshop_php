@@ -26,6 +26,8 @@
         <a href="/user/logout/" onclick="logout();">Exit</a>
     </div>
 
+
+    {if ! isset($hideLoginBox)}
     <div id="loginBox">
         <div class="menuCaption">Login</div>
         <input type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email">
@@ -45,7 +47,7 @@
             <input type="button" onclick="registerNewUser();" value="Sin up">
         </div>
     </div>
-
+    {/if}
     {/if}
 
     <div class="menuCaption">Basket</div>

@@ -7,6 +7,8 @@
  */
 include_once '../models/CategoriesModel.php';
 include_once '../models/UsersModel.php';
+include_once '../models/OrdersModel.php';
+include_once '../models/PurchaseModel.php';
 
 function registerAction(){
     $email = isset($_REQUEST['email']) ? $_REQUEST['email'] : null;
@@ -43,7 +45,7 @@ function registerAction(){
             $resData['userEmail'] = $email;
 
             $_SESSION['user'] = $userData;
-            $_SESSION['user']['diaplayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
+            $_SESSION['user']['displayName'] = $userData['name'] ? $userData['name'] : $userData['email'];
         }
         else{
             $resData['success'] = 0;
@@ -93,8 +95,12 @@ function indexAction($smarty){
 
     $rsCategories = getAllMainCatsWithChildren();
 
+    $rsUserOrders = getCurUserOrders();
+  // d($rsUserOrders);
+
     $smarty->assign('pageTitle', 'User page');
     $smarty->assign('rsCategories', $rsCategories);
+    $smarty->assign('rsUserOrders', $rsUserOrders);
 
     loadTemplate($smarty, 'header');
     loadTemplate($smarty, 'user');
