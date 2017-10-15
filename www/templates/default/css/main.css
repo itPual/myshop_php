@@ -31,3 +31,11 @@ body{
 .cartBox{
     padding: 5px 0px 5px 0px;
 }
+.showHiden{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+#registerBoxHiden{
+    display: none;
+}

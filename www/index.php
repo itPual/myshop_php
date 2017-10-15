@@ -17,6 +17,11 @@ $controllerName=isset($_GET['controller']) ? ucfirst($_GET['controller']) : "Ind
 $actionName = isset($_GET['action']) ? $_GET['action'] : "index";
 //echo "Function formative page (Action) = " . $actionName. "<br/>";
 
+//if user
+if(isset($_SESSION['user'])){
+    $smarty->assign('arUser', $_SESSION['user']);
+}
+
 //d($smarty);
 $smarty->assign('cartCntItems', count($_SESSION['cart']));
 

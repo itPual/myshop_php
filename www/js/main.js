@@ -117,3 +117,12 @@ function login() {
         }
     });
 }
+
+function showRegisterBox() {
+    if($('#registerBoxHiden').css('display') != 'block'){
+        $('#registerBoxHiden').show();
+    }
+    else {
+        $('#registerBoxHiden').hide();
+    }
+}
