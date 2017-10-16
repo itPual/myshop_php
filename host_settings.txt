@@ -1,0 +1,17 @@
+paste to the end of the file ‪C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+<VirtualHost *:80>
+    ServerAdmin postmaster@myshop.local
+    DocumentRoot "C:/xampp/htdocs/myshop.local/www"
+    ServerName myshop.local
+	ServerAlias www.myshop.local
+    ErrorLog "logs/myshop.local-error.log"
+    CustomLog "logs/myshop.local-access.log" common
+</VirtualHost>
+
+----------------------------------------------------------------------------------
+paste to the end of the file ‪‪C:\Windows\System32\drivers\etc\hosts
+
+
+127.0.0.1 myshop.local
+127.0.0.1 www.myshop.local

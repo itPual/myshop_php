@@ -7,7 +7,7 @@
             <a href="/?controller=category&id={$item['id']}/">{$item['name']}</a><br/>
             {if isset($item['children'])}
                 {foreach $item['children'] as $itemChild}
-                    --<a href="/?controller=category&id={$itemChild['id']}/">{$itemChild['name']}</a><br/>
+                    <span>&nbsp;*</span><a href="/?controller=category&id={$itemChild['id']}/">{$itemChild['name']}</a><br/>
                 {/foreach}
             {/if}
         {/foreach}
@@ -15,7 +15,7 @@
 
     {if isset($arUser)}
         <div id="userBox">
-            <a href="/user/" id="userLink">{$arUser['displayName']}</a><br/>
+            <a href="/user/" id="userLink"><h4>{$arUser['displayName']}</h4></a><br/>
             <a href="/user/logout/" onclick="logout();">Exit</a>
         </div>
         {else}
@@ -30,21 +30,23 @@
     {if ! isset($hideLoginBox)}
     <div id="loginBox">
         <div class="menuCaption">Login</div>
-        <input type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email">
-        <input type="password" id="loginPwd" name="loginPwd" value="" placeholder="Entre password">
-        <input type="button" onclick="login();" value="Login">
+        <input class="form-control" type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email">
+        <input class="form-control" type="password" id="loginPwd" name="loginPwd" value="" placeholder="Entre password">
+        <input class="btn btn-success form-control" type="button" onclick="login();" value="Login">
+        {*<button class="btn btn-success" onclick="login();">Login</button>*}
     </div>
 
     <div id="registerBox">
         <div class="menuCaption showHiden" onclick="showRegisterBox()">Sin up</div>
         <div id="registerBoxHiden">
             <label>email:</label><br/>
-            <input type="text" id="email" name="email" value="" placeholder="Entre your email"><br/>
+            <input class="form-control" type="text" id="email" name="email" value="" placeholder="Entre your email"><br/>
             <label>password:</label><br/>
-            <input type="password" id="pwd1" name="pwd1" value="" placeholder="Entre password">
+            <input class="form-control" type="password" id="pwd1" name="pwd1" value="" placeholder="Entre password">
             <label>password:</label><br/>
-            <input type="password" id="pwd2" name="pwd2" value="" placeholder="Repeat enter">
-            <input type="button" onclick="registerNewUser();" value="Sin up">
+            <input class="form-control" type="password" id="pwd2" name="pwd2" value="" placeholder="Repeat enter">
+            <input class="btn btn-success form-control" type="button" onclick="registerNewUser();" value="Sin up">
+            {*<button class="btn btn-success" onclick="registerNewUser();">Sin up</button>*}
         </div>
     </div>
     {/if}

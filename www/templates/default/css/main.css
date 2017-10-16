@@ -5,24 +5,35 @@ body{
 .hideme{
     display: none;
 }
+/*.container{*/
+    /*position: relative;*/
+/*}*/
 #header{
-    height: 70px;
+    height: 40px;
     text-align: center;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+#icon{
+    position: absolute;
+    left: 30px;
 }
 #leftColum{
-    width: 200px;
+    /*width: 150px;*/
     float: left;
 }
 #leftMenu, #loginBox, #registerBox{
     padding-bottom: 20px;
 }
 #centerColumn{
-    width: 600px;
+    /*width: 600px;*/
     float: left;
     padding-left: 90px;
 }
 #footer{
     clear: both;
+    text-align: center;
 }
 .menuCaption{
     padding: 3px;
@@ -32,10 +43,23 @@ body{
     padding: 5px 0px 5px 0px;
 }
 .showHiden{
-    text-decoration: underline;
-    color: blue;
+    color: #0f0f0f;
     cursor: pointer;
 }
 #registerBoxHiden{
     display: none;
+}
+.btn{
+    background-color: #2e6da4;
+}
+input{
+    margin: 5px;
+}
+a{
+    color: #885c23;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: green; /* Ссылка красного цвета */
 }

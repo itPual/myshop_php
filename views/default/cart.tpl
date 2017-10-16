@@ -7,7 +7,7 @@
     {else}
     <form action="/cart/order/" method="POST">
     <h2>Order data</h2>
-    <table>
+    <table class="table table-striped">
         <tr>
             <td>
                 №
@@ -51,11 +51,11 @@
                 </td>
                 <td>
                     <a id="removeCart_{$item['id']}" href="#" onclick="removeFromCart({$item['id']}); return false;" title="Remove from basket">Remove</a>
-                    <a id="addCart_{$item['id']}" class="hideme" href="#" onclick="addToCart({$item['id']}); return false;" title="Restore the element">Restore</a>
+                    <a id="addCart_{$item['id']}" class="hideme btn btn-success" href="#" onclick="addToCart({$item['id']}); return false;" title="Restore the element">Restore</a>
                 </td>
             </tr>
         {/foreach}
     </table>
-        <input type="submit" value="Checkout">
+        <input class="btn btn-success" type="submit" value="Checkout">
     </form>
 {/if}

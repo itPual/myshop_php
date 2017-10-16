@@ -1,6 +1,6 @@
 {*user page*}
 <h1>Your login information</h1>
-<table border="0">
+<table class="table table-striped">
     <tr>
         <td>Login (email)</td>
         <td>{$arUser['email']}</td>
@@ -35,7 +35,7 @@
             &nbsp;
         </td>
         <td>
-            <input type="button" value="Save changes" onclick="updateUserData();">
+            <input type="button" class="btn btn-success" value="Save changes" onclick="updateUserData();">
         </td>
     </tr>
 </table>
@@ -44,7 +44,7 @@
 {if ! $rsUserOrders}
     No orders
     {else}
-    <table border="1" cellpadding="1" cellspacing="1">
+    <table class="table table-striped">
         <tr>
             <th>№</th>
             <th>Act</th>
@@ -68,7 +68,7 @@
             <tr class="hideme" id="purchasesForOrderId_{$item['id']}">
                 <td colspan="7">
                     {if $item['children']}
-                        <table border="1" cellpadding="1" cellspacing="1" width="100%">
+                        <table class="table table-striped">
                             <tr>
                                 <th>№</th>
                                 <th>ID</th>

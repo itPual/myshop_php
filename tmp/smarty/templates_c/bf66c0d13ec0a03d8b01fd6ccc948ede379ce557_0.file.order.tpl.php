@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-15 14:10:26
+/* Smarty version 3.1.30, created on 2017-10-16 09:02:08
   from "C:\xampp\htdocs\myshop.local\views\default\order.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59e350328029c1_53063291',
+  'unifunc' => 'content_59e45970562497_52766583',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf66c0d13ec0a03d8b01fd6ccc948ede379ce557' => 
     array (
       0 => 'C:\\xampp\\htdocs\\myshop.local\\views\\default\\order.tpl',
-      1 => 1508069421,
+      1 => 1508137326,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59e350328029c1_53063291 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e45970562497_52766583 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <h2>Order data</h2>
 <form id="frmOrder" action="/catr/saveorder/" method="POST">
-    <table>
+    <table class="table table-striped">
         <tr>
             <td>№</td>
             <td>Name of product</td>
@@ -100,7 +100,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
             <?php $_smarty_tpl->_assignInScope('adress', $_smarty_tpl->tpl_vars['arUser']->value['adress']);
 ?>
-            <table>
+            <table class="table table-striped">
                 <tr>
                     <td>Name</td>
                     <td><input type="text" id="name" name="name" value="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
@@ -121,7 +121,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <?php } else { ?>
         <div id="loginBox">
             <div class="menuCaption">Login</div>
-            <table>
+            <table class="table table-striped">
                 <tr>
                     <td>Login</td>
                     <td><input type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email"></td>
@@ -132,7 +132,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="button" onclick="login();" value="Login"></td>
+                    <td><input type="button" class="btn btn-success" onclick="login();" value="Login"></td>
                 </tr>
             </table>
         </div>
@@ -153,14 +153,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             <label>Adress:</label><br/>
             <textarea type="text" id="adress" name="adress" placeholder="Entre your adress"></textarea><br/>
 
-            <input type="button" onclick="registerNewUser();" value="Sin up">
+            <input type="button" class="btn btn-success" onclick="registerNewUser();" value="Sin up">
         </div>
         <?php $_smarty_tpl->_assignInScope('buttonClass', "class='hideme'");
 ?>
     <?php }?>
 
 <input <?php echo $_smarty_tpl->tpl_vars['buttonClass']->value;?>
- id="btnSaveOrder" type="button" value="Checkout" onclick="saveOrder();">
+ id="btnSaveOrder" type="button" class="btn btn-success" value="Checkout" onclick="saveOrder();">
 </form>
 <?php }
 }

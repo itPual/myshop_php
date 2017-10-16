@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-10-15 19:10:12
+/* Smarty version 3.1.30, created on 2017-10-16 09:03:29
   from "C:\xampp\htdocs\myshop.local\views\default\user.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59e3967483a258_87060681',
+  'unifunc' => 'content_59e459c14277b3_10544232',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56bf31b2920ae820863dc9da7be14c1de55a2582' => 
     array (
       0 => 'C:\\xampp\\htdocs\\myshop.local\\views\\default\\user.tpl',
-      1 => 1508087384,
+      1 => 1508137407,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59e3967483a258_87060681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e459c14277b3_10544232 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <h1>Your login information</h1>
-<table border="0">
+<table class="table table-striped">
     <tr>
         <td>Login (email)</td>
         <td><?php echo $_smarty_tpl->tpl_vars['arUser']->value['email'];?>
@@ -63,7 +63,7 @@ function content_59e3967483a258_87060681 (Smarty_Internal_Template $_smarty_tpl)
             &nbsp;
         </td>
         <td>
-            <input type="button" value="Save changes" onclick="updateUserData();">
+            <input type="button" class="btn btn-success" value="Save changes" onclick="updateUserData();">
         </td>
     </tr>
 </table>
@@ -72,7 +72,7 @@ function content_59e3967483a258_87060681 (Smarty_Internal_Template $_smarty_tpl)
 <?php if (!$_smarty_tpl->tpl_vars['rsUserOrders']->value) {?>
     No orders
     <?php } else { ?>
-    <table border="1" cellpadding="1" cellspacing="1">
+    <table class="table table-striped">
         <tr>
             <th>№</th>
             <th>Act</th>
@@ -111,7 +111,7 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_orders']->value['iteration']++;
 ">
                 <td colspan="7">
                     <?php if ($_smarty_tpl->tpl_vars['item']->value['children']) {?>
-                        <table border="1" cellpadding="1" cellspacing="1" width="100%">
+                        <table class="table table-striped">
                             <tr>
                                 <th>№</th>
                                 <th>ID</th>

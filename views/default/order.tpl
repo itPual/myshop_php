@@ -1,7 +1,7 @@
 {*Order page*}
 <h2>Order data</h2>
 <form id="frmOrder" action="/catr/saveorder/" method="POST">
-    <table>
+    <table class="table table-striped">
         <tr>
             <td>№</td>
             <td>Name of product</td>
@@ -44,7 +44,7 @@
             {$name = $arUser['name']}
             {$phone = $arUser['phone']}
             {$adress = $arUser['adress']}
-            <table>
+            <table class="table table-striped">
                 <tr>
                     <td>Name</td>
                     <td><input type="text" id="name" name="name" value="{$name}"></td>
@@ -62,7 +62,7 @@
     {else}
         <div id="loginBox">
             <div class="menuCaption">Login</div>
-            <table>
+            <table class="table table-striped">
                 <tr>
                     <td>Login</td>
                     <td><input type="text" id="loginEmail" name="loginEmail" value="" placeholder="Entre your email"></td>
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="button" onclick="login();" value="Login"></td>
+                    <td><input type="button" class="btn btn-success" onclick="login();" value="Login"></td>
                 </tr>
             </table>
         </div>
@@ -94,10 +94,10 @@
             <label>Adress:</label><br/>
             <textarea type="text" id="adress" name="adress" placeholder="Entre your adress"></textarea><br/>
 
-            <input type="button" onclick="registerNewUser();" value="Sin up">
+            <input type="button" class="btn btn-success" onclick="registerNewUser();" value="Sin up">
         </div>
         {$buttonClass = "class='hideme'"}
     {/if}
 
-<input {$buttonClass} id="btnSaveOrder" type="button" value="Checkout" onclick="saveOrder();">
+<input {$buttonClass} id="btnSaveOrder" type="button" class="btn btn-success" value="Checkout" onclick="saveOrder();">
 </form>
